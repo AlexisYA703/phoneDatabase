@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/phone_bg"
+    tools:context=".main.view.view.PhoneSQLiteDatabase">
+
+    <ImageView
+        android:id="@+id/phone_inventory_icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:background="@drawable/pink_phone"
+        android:padding="16dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inventory"
+        android:textSize="24dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/manufacturer_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/phone_inventory_icon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:background="#3F51B5"
+        android:id="@+id/manufacturer_spinner"
+        android:layout_width="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/phone_inventory_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/model_edittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:ems="10"
+        android:hint="@string/model"
+        android:padding="8dp"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        android:background="#386D7D"
+        android:textColorHint="#96A5A3"
+        android:textColor="#C9CEDFDD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/manufacturer_spinner" />
+
+    <EditText
+        android:id="@+id/price_edittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:ems="10"
+        android:hint="@string/price_tag_textview"
+        android:padding="8dp"
+        android:inputType="textPersonName"
+        android:maxLength="4"
+        android:background="#386D7D"
+        android:textColorHint="#C9CEDFDD"
+        android:textColor="#C9CEDFDD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/model_edittext" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/ActionButton"
+        android:id="@+id/insert_phone_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/price_edittext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp"
+        android:text="@string/add_phone"/>
+
+    <ListView
+        android:id="@+id/phone_listview"
+        android:background="#B3FFFFFF"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="8dp"
+        tools:listitem="@layout/phone_item_layout"
+        app:layout_constraintTop_toBottomOf="@id/insert_phone_button"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
